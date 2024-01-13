@@ -6,16 +6,19 @@ function solveEquation(a, b, c) {
   // Проверяем значения дискриминанта и возвращаем соответствующий результат
   if (discriminant < 0) {
     // Нет корней
-    return (arr = []);
+    arr = [];
+    return arr;
   } else if (discriminant === 0) {
     // Один корень
     const root = -b / (2 * a);
-    return (arr = [root]);
+    arr = [root];
+    return arr;
   } else {
     // Два корня
     const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
     const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-    return (arr = [root1, root2]);
+    arr = [root1, root2];
+    return arr;
   }
 }
 
@@ -26,10 +29,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const monthPay =
     creditBody *
     (percentMonth + percentMonth / ((1 + percentMonth) ** countMonths - 1));
-  if (monthPay == 0) {
-    return result;
-  } else {
-    result = Number((countMonths * monthPay).toFixed(2));
-    return result;
-  }
+
+  result = Number((countMonths * monthPay).toFixed(2));
+  return result;
 }
